@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Une Pensée Pour Toi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="pourquoi.html">Pourquoi ce site ?</a></li>
+            <li><a href="qualites.html">Ce que j'aime chez toi</a></li>
+            <li><a href="journey.html">Souvenirs</a></li>
+            <li><a href="galerie.html" class="active">Galerie</a></li>
+            <li><a href="lettre.html">Un Message</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2>Quelques fragments visuels</h2>
+        <p>Une collection de moments, d'inspirations et de choses qui me font penser à toi. Cliquez sur une image pour l'agrandir.</p>
+
+        <div class="photo-grid">
+            <figure class="photo-item" data-type="image">
+                <img src="AppelVideo.jpeg" alt="Notre premier appel vidéo" class="grid-img">
+                <figcaption>Ce fameux premier appel. Un simple moment qui a tout changé.</figcaption>
+            </figure>
+
+            <figure class="photo-item" data-type="video" data-src="justeMagnifique.mp4">
+                <div class="video-thumbnail-container">
+                    <video src="justeMagnifique.mp4#t=1" class="grid-video" preload="metadata" muted loop playsinline></video>
+                    <div class="play-icon"></div>
+                </div>
+                <figcaption>Juste magnifique...</figcaption>
+            </figure>
+
+            <figure class="photo-item" data-type="video" data-src="Plage.mp4">
+                <div class="video-thumbnail-container">
+                    <video src="Plage.mp4#t=1" class="grid-video" preload="metadata" muted loop playsinline></video>
+                    <div class="play-icon"></div>
+                </div>
+                <figcaption>Une journée à la plage.</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <!-- The Modal -->
+    <div id="photoModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <video class="modal-content" id="modalVideo" controls></video>
+        <div id="caption" class="modal-caption"></div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="animation.js"></script>
+    <script src="galerie.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Message Pour Toi - Une Pensée Pour Toi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="pourquoi.html">Pourquoi ce site ?</a></li>
+            <li><a href="qualites.html">Ce que j'aime chez toi</a></li>
+            <li><a href="journey.html">Souvenirs</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="lettre.html" class="active">Un Message</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="envelope-container">
+            <h2>Juste un dernier mot...</h2>
+            <button id="toggle-message">Ouvrir le message</button>
+            <div id="love-message" class="love-message-hidden">
+                <p>
+                    Merci d'avoir pris le temps de parcourir ces quelques pages. J'espère que ce petit voyage t'a plu et qu'il t'a apporté un sourire.
+                </p>
+                <p>
+                    Peu importe la suite, je voulais simplement que tu saches que tu es une personne qui compte beaucoup pour moi, et que je suis heureux d'avoir eu la chance de croiser ton chemin.
+                </p>
+                <div class="signature">
+                    <p>Ton admirateur secret</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="animation.js"></script>
+    <script src="lettre.js"></script>
+</body>
+</html>
