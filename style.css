@@ -511,6 +511,22 @@ p {
     letter-spacing: 1px;
 }
 
+/* --- Time Since We Talked Styling --- */
+#time-since-we-talked-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--accent-color); /* A different color to distinguish */
+    color: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+#time-since-we-talked-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
     body {

@@ -93,5 +93,31 @@ document.addEventListener('DOMContentLoaded', () => {
             updateBirthdayCountdown(); // Initial call
             const countdownInterval = setInterval(updateBirthdayCountdown, 1000);
         }
+
+        // --- Time Since We Talked Logic ---
+        const timeSinceElement = document.getElementById('time-since-we-talked');
+        const startDateTalked = new Date('2025-11-03T00:00:00').getTime(); // November 3rd, 2025
+
+        const updateTimeSinceWeTalked = () => {
+            const now = new Date().getTime();
+            const distance = now - startDateTalked;
+
+            if (distance < 0) { // Should not happen if start date is in the past
+                timeSinceElement.innerHTML = "En attente du 3 novembre 2025...";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            timeSinceElement.textContent = `${days} jours ${hours} heures ${minutes} minutes ${seconds} secondes`;
+        };
+
+        if (timeSinceElement) {
+            updateTimeSinceWeTalked(); // Initial call
+            setInterval(updateTimeSinceWeTalked, 1000);
+        }
     }
 });
