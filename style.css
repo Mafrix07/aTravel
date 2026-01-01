@@ -1,5 +1,6 @@
 /* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 /* --- Variables --- */
 :root {
@@ -9,6 +10,7 @@
     --text-color: #5D504A; /* Muted Brown */
     --heading-font: 'Montserrat', sans-serif;
     --body-font: 'Poppins', sans-serif;
+    --handwriting-font: 'Great Vibes', cursive;
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
 }
 
@@ -116,7 +118,9 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 2.8rem;
+    font-family: var(--handwriting-font);
+    font-size: 3.5rem; /* Make it a bit larger */
+    line-height: 1.2;
 }
 
 h2 {
@@ -251,6 +255,8 @@ p {
     text-align: right;
     font-style: italic;
     margin-top: 2rem;
+    font-family: var(--handwriting-font); /* Apply handwriting font here too */
+    font-size: 1.5rem;
 }
 
 /* --- Interactive Letter Styles --- */
@@ -464,6 +470,45 @@ p {
         transform: translateY(105vh) translateX(var(--drift, 0)) rotate(720deg);
         opacity: 0;
     }
+}
+
+/* --- Thought of the Day Styling --- */
+#thought-of-the-day {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+#daily-thought {
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* --- Birthday Countdown Styling --- */
+#birthday-countdown-section {
+    margin-top: 2rem; /* Add some space above */
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+#birthday-countdown-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.countdown-text {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 /* --- Responsive --- */

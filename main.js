@@ -66,5 +66,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Call the function on page load for the homepage
     if (currentPage === 'index.html' || currentPage === '') { // Check for both index.html and root path
         displayDailyThought();
+        
+        // --- Birthday Countdown Logic ---
+        const birthdayCountdownElement = document.getElementById('birthday-countdown');
+        const targetDate = new Date('2026-05-20T00:00:00').getTime(); // May 20, 2026
+
+        const updateBirthdayCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                birthdayCountdownElement.innerHTML = "Joyeux 18ème Anniversaire !";
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            birthdayCountdownElement.textContent = `${days} jours ${hours} heures ${minutes} minutes ${seconds} secondes`;
+        };
+
+        if (birthdayCountdownElement) {
+            updateBirthdayCountdown(); // Initial call
+            const countdownInterval = setInterval(updateBirthdayCountdown, 1000);
+        }
     }
 });

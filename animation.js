@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             element.classList.add('petal');
         }
         
-        // Start position and animation duration
         const startX = Math.random() * window.innerWidth;
         const duration = (isRose ? Math.random() * 7 + 10 : Math.random() * 5 + 8); // Roses fall a bit slower (10-17s), petals (8-13s)
         const delay = Math.random() * 7;

@@ -1,0 +1,65 @@
+/* The body and html now use the main site's background color */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-color); /* From style.css */
+    font-family: var(--body-font); /* From style.css */
+}
+
+#snowfall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.christmas-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: #FFFFFF; /* Match container background */
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--text-color); /* From style.css */
+    box-shadow: var(--box-shadow); /* From style.css */
+    width: 90%;
+    max-width: 600px;
+}
+
+.christmas-card h1 {
+    font-family: var(--handwriting-font); /* From style.css */
+    color: var(--accent-color); /* Festive but in-theme color */
+    font-size: 3.5rem; /* Match main page h1 */
+    margin-bottom: 20px;
+}
+
+.christmas-card p {
+    font-size: 1.1rem; /* Match main page p */
+    line-height: 1.7;
+}
+
+/* Re-styling the back-link to look like .btn from the main site */
+.back-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
