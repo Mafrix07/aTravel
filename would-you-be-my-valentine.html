@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise !!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #d147a3; /* Un rose plus romantique */
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2em; /* Slightly larger font */
+            font-weight: bold;
+            color: white;
+            background-color: #ff69b4; /* Rose vif */
+            border: none;
+            border-radius: 30px; /* More rounded */
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease; /* Smoother transition for all properties */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Added shadow */
+        }
+        .button.yes {
+            background-color: #4CAF50; /* Vert pour Oui */
+        }
+        .button.no {
+            background-color: #f44336; /* Rouge pour Non */
+        }
+        .button:hover {
+            transform: translateY(-5px) scale(1.05); /* More pronounced hover effect */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+            opacity: 1;
+        }
+        .image-placeholder {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="pourquoi.html">Pourquoi ce site ?</a></li>
+            <li><a href="qualites.html">Ce que j'aime chez toi</a></li>
+            <li><a href="journey.html">Souvenirs</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="lettre.html">Un Message</a></li>
+            <li><a href= "would-you-be-my-valentine.html">Surprise !! </a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+    <div class="container">
+        <h1>Chère MPM,</h1>
+        <p>En ce jour spécial, j'ai une question très importante à te poser. Chaque moment passé avec toi est un cadeau, et tu illumines ma vie de mille feux.</p>
+        <p>J'ai cherché les mots justes, mais parfois, la simplicité est la plus belle des preuves. Alors...</p>
+        <img src="AppelVideo.jpeg" alt="Un moment spécial" class="image-placeholder">
+        <p style="font-size: 1.5em; font-weight: bold; margin-top: 30px;">Voudrais-tu être ma Valentine ?</p>
+
+        <p style="margin-top: 30px; font-style: italic; color: #777;">Peu importe ta réponse, tu es une personne incroyable.</p>
+    </div>
+
+    <div class="buttons">
+        <a href="#" class="button yes" onclick="alert('Yay! Je suis si heureux !')">OUI !</a>
+        <a href="#" class="button no" onclick="alert('Oh non... Peut-être une autre fois ?')">NON...</a>
+    </div>
+       
+
+    <script src="main.js"></script>
+    <script src="animation.js"></script>
+    <script src="lettre.js"></script>
+</body>
+</html>
