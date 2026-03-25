@@ -1,28 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const currentPage = window.location.pathname.split('/').pop();
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
+    // --- Back to Top Button Injection & Logic ---
+    const backToTop = document.createElement('a');
+    backToTop.id = 'back-to-top';
+    backToTop.href = '#';
+    backToTop.innerHTML = '↑';
+    document.body.appendChild(backToTop);
 
-        // Don't add listener to the link of the current page
-        if (linkPage === currentPage) {
-            return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
         }
+    });
 
-        link.addEventListener('click', (e) => {
-            // Prevent instant navigation
-            e.preventDefault(); 
-            const destination = link.href;
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-            // Add the fade-out class to the body
-            document.body.classList.add('fade-out');
-
-            // Wait for the animation to finish, then navigate
-            setTimeout(() => {
-                window.location.href = destination;
-            }, 500); // This duration should match the fadeOut animation time
-        });
+    // --- Lazy Loading for Media ---
+    const mediaElements = document.querySelectorAll('img, video');
+    mediaElements.forEach(el => {
+        if (!el.hasAttribute('loading')) {
+            el.setAttribute('loading', 'lazy');
+        }
     });
 
     // --- Pensée du Jour Logic ---

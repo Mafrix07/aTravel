@@ -5,21 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerie - Une Pensée Pour Toi</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
-
-
-    <nav class="main-nav">
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Accueil</a></li>
-            <li><a href="pourquoi.html">Pourquoi ce site ?</a></li>
-            <li><a href="qualites.html">Ce que j'aime chez toi</a></li>
-            <li><a href="journey.html">Souvenirs</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
-            <li><a href="lettre.html">Un Message</a></li>
-            <li><a href= "would-you-be-my-valentine.html">Surprise !! </a></li>
-        </ul>
-    </nav>
 
     <main class="container">
         <h2>Quelques fragments visuels</h2>
@@ -33,7 +25,7 @@
 
             <figure class="photo-item" data-type="video" data-src="justeMagnifique.mp4">
                 <div class="video-thumbnail-container">
-                    <video src="justeMagnifique.mp4#t=1" class="grid-video" preload="metadata" muted loop playsinline></video>
+                    <video src="justeMagnifique.mp4#t=1" poster="AppelVideo.jpeg" class="grid-video" preload="metadata" muted loop playsinline></video>
                     <div class="play-icon"></div>
                 </div>
                 <figcaption>Juste magnifique...</figcaption>
@@ -41,7 +33,7 @@
 
             <figure class="photo-item" data-type="video" data-src="Plage.mp4">
                 <div class="video-thumbnail-container">
-                    <video src="Plage.mp4#t=1" class="grid-video" preload="metadata" muted loop playsinline></video>
+                    <video src="Plage.mp4#t=1" poster="AppelVideo.jpeg" class="grid-video" preload="metadata" muted loop playsinline></video>
                     <div class="play-icon"></div>
                 </div>
                 <figcaption>Une journée à la plage.</figcaption>
@@ -58,6 +50,7 @@
         <div id="caption" class="modal-caption"></div>
     </div>
 
+    <script src="nav.js"></script>
     <script src="main.js"></script>
     <script src="animation.js"></script>
     <script src="galerie.js"></script>
