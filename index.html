@@ -44,18 +44,41 @@
       </p>
 
       <!-- Compteurs -->
-      <div class="counters">
-        <div class="counter-item">
-          <span class="counter-value" id="days">—</span>
-          <span class="counter-label">Jours ensemble</span>
+      <div class="counters-container">
+        <div class="counter-group">
+          <h3 class="counter-group-title">Notre histoire</h3>
+          <div class="counters">
+            <div class="counter-item">
+              <span class="counter-value" id="days">—</span>
+              <span class="counter-label">Jours ensemble</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-value" id="hours">—</span>
+              <span class="counter-label">Heures</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-value" id="minutes">—</span>
+              <span class="counter-label">Minutes</span>
+            </div>
+          </div>
         </div>
-        <div class="counter-item">
-          <span class="counter-value" id="hours">—</span>
-          <span class="counter-label">Heures</span>
-        </div>
-        <div class="counter-item">
-          <span class="counter-value" id="minutes">—</span>
-          <span class="counter-label">Minutes</span>
+
+        <div class="counter-group birthday-countdown">
+          <h3 class="counter-group-title">Son anniversaire (20 Mai)</h3>
+          <div class="counters">
+            <div class="counter-item">
+              <span class="counter-value" id="b-days">—</span>
+              <span class="counter-label">Jours</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-value" id="b-hours">—</span>
+              <span class="counter-label">Heures</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-value" id="b-minutes">—</span>
+              <span class="counter-label">Minutes</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -71,8 +94,8 @@
   </footer>
 
   <script>
-    // Compteur depuis le 23 octobre 2025
     function updateCounter() {
+      // 1. Compteur "Depuis" le 23 octobre 2025
       const start = new Date('2025-10-23T00:00:00');
       const now   = new Date();
       const diff  = now - start;
@@ -84,6 +107,24 @@
       document.getElementById('days').textContent    = days;
       document.getElementById('hours').textContent   = hours;
       document.getElementById('minutes').textContent = minutes;
+
+      // 2. Compteur "Avant" le 20 Mai
+      let currentYear = now.getFullYear();
+      let birthday = new Date(currentYear, 4, 20); // Mois 4 = Mai en JS
+
+      // Si le 20 mai est déjà passé cette année, on vise celui de l'année prochaine
+      if (now > birthday) {
+        birthday = new Date(currentYear + 1, 4, 20);
+      }
+
+      const bDiff = birthday - now;
+      const bDays = Math.floor(bDiff / (1000 * 60 * 60 * 24));
+      const bHours = Math.floor((bDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const bMinutes = Math.floor((bDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById('b-days').textContent = bDays;
+      document.getElementById('b-hours').textContent = bHours;
+      document.getElementById('b-minutes').textContent = bMinutes;
     }
 
     updateCounter();
